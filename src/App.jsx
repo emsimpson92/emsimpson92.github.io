@@ -1,11 +1,14 @@
 import { Fragment } from 'react'
-import './App.css'
+import { ThemeProvider } from './context/ThemeContext'
+import HomePage from './pages/HomePage'
 
 function App() {
   return (
-    <Fragment>
-
-    </Fragment>
+    <ThemeProvider>
+      <Fragment>
+        <HomePage />
+      </Fragment>
+    </ThemeProvider>
   )
 }
 
