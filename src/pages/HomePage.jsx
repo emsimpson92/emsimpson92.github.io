@@ -9,6 +9,14 @@ import {
 import { useTheme } from '../hooks/useTheme';
 import ActivityCard from '../components/ActivityCard';
 import '../styles/fonts.css';
+import SpringsImg from '../assets/Springs.png';
+import DiningImg from '../assets/Dining.png';
+import NightlifeImg from '../assets/Nightlife.png';
+import EventsImg from '../assets/Events.png';
+import RecreationImg from '../assets/Recreation.png';
+import AccommodationsImg from '../assets/Accommodations.png';
+import OasisHomeImg from '../assets/OasisHome.png';
+import DiscordIcon from '../assets/discord-icon.svg';
 
 const activities = [
     {
@@ -16,42 +24,42 @@ const activities = [
         title: 'Spa & Wellness',
         description: 'Relax and rejuvenate at our hot springs resort',
         link: '/wellness',
-        image: <img src="/src/assets/Springs.png" alt={'Wellness'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
+        image: <img src={SpringsImg} alt={'Wellness'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
     },
     {
         id: 2,
         title: 'Dining',
         description: 'Exquisite culinary experiences crafted by renowned chefs',
         link: '/dining',
-        image: <img src="/src/assets/Dining.png" alt={'Dining'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
+        image: <img src={DiningImg} alt={'Dining'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
     },
     {
         id: 3,
         title: 'Nightlife',
         description: 'Vibrant entertainment in our elegant lounges',
         link: '/nightlife',
-        image: <img src="/src/assets/Nightlife.png" alt={'Nightlife'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
+        image: <img src={NightlifeImg} alt={'Nightlife'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
     },
     {
         id: 4,
         title: 'Events',
         description: 'Host your special occasions in our stunning venues',
         link: '/events',
-        image: <img src="/src/assets/Events.png" alt={'Events'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
+        image: <img src={EventsImg} alt={'Events'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
     },
     {
         id: 5,
         title: 'Recreation',
         description: 'Enjoy waterfalls, beaches, and outdoor adventures',
         link: '/recreation',
-        image: <img src="/src/assets/Recreation.png" alt={'Recreation'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
+        image: <img src={RecreationImg} alt={'Recreation'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
     },
     {
         id: 6,
         title: 'Accommodations',
         description: 'Luxurious rooms with breathtaking views',
         link: '/accommodations',
-        image: <img src="/src/assets/Accommodations.png" alt={'Accommodations'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
+        image: <img src={AccommodationsImg} alt={'Accommodations'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
     },
 ];
 
@@ -118,7 +126,7 @@ const Styles = (theme) => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'url(/src/assets/OasisHome.png)',
+            background: `url(${OasisHomeImg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
@@ -190,7 +198,7 @@ function HomePage() {
     return (
         <Box style={styles.root}>
             <Button variant="text" href="https://discord.gg/AhsnAsSUNK" target="_blank" rel="noopener noreferrer" sx={styles.discordButton}>
-                <img src='/src/assets/discord-icon.svg' alt='Discord' style={{width: '40px', height: '40px', marginRight: '8px', verticalAlign: 'middle'}} />
+                <img src={DiscordIcon} alt='Discord' style={{width: '40px', height: '40px', marginRight: '8px', verticalAlign: 'middle'}} />
                 Join us on Discord
             </Button>
             {/* Hero Section */}
