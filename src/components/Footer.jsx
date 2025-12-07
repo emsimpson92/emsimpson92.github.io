@@ -35,7 +35,7 @@ const Styles = (theme) => {
             fontWeight: 'bold',
             userSelect: 'none',
             marginLeft: '4px',
-            fontFamily: 'Arsenica Trial Regular, serif',
+            fontFamily: 'Cormorant Garamond, serif',
             marginBottom: theme.spacing.sm,
         },
         sectionButton: {
@@ -90,7 +90,7 @@ function Footer() {
                     <Typography sx={styles.sectionTitle}>Contact</Typography>
                     <hr style={styles.divider} />
                     <Button variant="inline" sx={styles.sectionButton}>General Inquiries</Button>
-                    <Button variant="inline" sx={styles.sectionButton}>Join the Community</Button>
+                    <Button variant="inline" onClick={() => window.open('https://discord.gg/AhsnAsSUNK', '_blank', 'noopener,noreferrer')} sx={styles.sectionButton}>Join the Community</Button>
                 </Box>
             </Box>
         </Box>

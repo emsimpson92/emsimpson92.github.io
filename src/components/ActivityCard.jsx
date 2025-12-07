@@ -17,10 +17,14 @@ const Styles = (theme) => {
         },
         cardTitle: {            
             color: theme.colors.primary,
+            fontFamily: 'Cormorant Garamond, serif',
+            fontSize: theme.typography.fontSize.xlarge,
             fontWeight: 'bold',
         },
         description: {            
             color: theme.colors.text,
+            fontFamily: 'Cormorant Garamond, serif',
+            fontSize: theme.typography.fontSize.base,
             marginBottom: theme.spacing.md,
             flex: 1,
         },
