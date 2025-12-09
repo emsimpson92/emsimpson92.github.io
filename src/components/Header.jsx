@@ -44,15 +44,7 @@ const Styles = (theme) => {
             gap: theme.spacing.sm,
             '&:hover': {
                 opacity: 0.7,
-            },
-            '@media (max-width: 768px)': {
-                padding: `${theme.spacing.xs}`,
-            },
-        },
-        discordText: {
-            '@media (max-width: 768px)': {
-                display: 'none',
-            },
+            }
         },
         oasisText: {
             transform: 'translateY(-4px)',
@@ -74,7 +66,7 @@ function Header() {
             </RouterLink>
             <Button variant="text" href="https://discord.gg/AhsnAsSUNK" target="_blank" rel="noopener noreferrer" sx={styles.discordButton}>
                 <img src={DiscordIcon} alt="Discord" style={{ width: '24px', height: '24px' }} />
-                <span style={styles.discordText}>Join us on Discord</span>
+                <span>Discord</span>
             </Button>
         </Box>
     );

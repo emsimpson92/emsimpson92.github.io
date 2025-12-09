@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
   Box,
   Button,
@@ -195,11 +195,15 @@ function HomePage() {
         event.target.blur();
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Box style={styles.root}>
             <Button variant="text" href="https://discord.gg/AhsnAsSUNK" target="_blank" rel="noopener noreferrer" sx={styles.discordButton}>
                 <img src={DiscordIcon} alt='Discord' style={{width: '40px', height: '40px', marginRight: '8px', verticalAlign: 'middle'}} />
-                Join us on Discord
+                Discord
             </Button>
             {/* Hero Section */}
             <Box component="section" style={styles.splashPage}>

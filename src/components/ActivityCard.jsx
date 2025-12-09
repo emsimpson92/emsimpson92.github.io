@@ -1,6 +1,7 @@
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
+import { Fragment } from 'react';
 
 const Styles = (theme, hasLink) => {
     return {
@@ -64,7 +65,7 @@ function ActivityCard({ title, description, link, children }) {
     const hasLink = !!link;
 
     const cardContent = (
-        <>
+        <Fragment>
             <CardMedia component="div">{children}</CardMedia>
             <CardContent sx={styles.content}>
                 <Typography gutterBottom variant="h5" style={styles.cardTitle}>
@@ -73,24 +74,28 @@ function ActivityCard({ title, description, link, children }) {
                 <Typography variant="body2" style={styles.description}>
                     {description}
                 </Typography>
-                {hasLink && (
-                    <Typography sx={styles.learnMore}>
-                        Learn More →
-                    </Typography>
-                )}
+                {
+                    hasLink && (
+                        <Typography sx={styles.learnMore}>
+                            Learn More →
+                        </Typography>
+                    )
+                }
             </CardContent>
-        </>
+        </Fragment>
     );
 
     return (
         <Card sx={styles.root}>
-            {hasLink ? (
+        {
+            hasLink ? (
                 <RouterLink to={link} style={styles.link}>
                     {cardContent}
                 </RouterLink>
             ) : (
                 cardContent
-            )}
+            )
+        }
         </Card>
     )
 }

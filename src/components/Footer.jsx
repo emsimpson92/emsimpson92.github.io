@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from '@mui/material'
 import { useTheme } from '../hooks/useTheme'
+import { Link as RouterLink } from 'react-router-dom';
 
 const Styles = (theme) => {
     return {
@@ -41,11 +42,13 @@ const Styles = (theme) => {
         sectionButton: {
             color: theme.colors.primary,
             textTransform: 'none',
-            fontWeight: 'bold',
+            textDecoration: 'none',
+            fontWeight: 700,
             padding: '4px',
             fontFamily: 'Cormorant Garamond, serif',
             textAlign: 'left',
             display: 'block',
+            fontSize: '0.875rem',
             margin: `${theme.spacing.xs} 0`,
             '&:hover': {
                 opacity: 0.7,
@@ -77,19 +80,19 @@ function Footer() {
                 <Box sx={styles.section}>
                     <Typography sx={styles.sectionTitle}>About</Typography>
                     <hr style={styles.divider} />
-                    <Button variant="inline" sx={styles.sectionButton}>What is the Oasis?</Button>
-                    <Button variant="inline" sx={styles.sectionButton}>Community Map</Button>
+                    <RouterLink style={styles.sectionButton} to="/about">What is the Oasis?</RouterLink>
+                    <RouterLink style={styles.sectionButton} to="/map">Community Map</RouterLink>
                 </Box>
                 <Box sx={styles.section}>
                     <Typography sx={styles.sectionTitle}>Events</Typography>
                     <hr style={styles.divider} />
-                    <Button variant="inline" sx={styles.sectionButton}>Upcoming events</Button>
-                    <Button variant="inline" sx={styles.sectionButton}>Request an Event</Button>
+                    <RouterLink style={styles.sectionButton} to="/events/upcoming">Upcoming events</RouterLink>
+                    <RouterLink style={styles.sectionButton} to="/events/request">Request an Event</RouterLink>
                 </Box>
                 <Box sx={styles.section}>
                     <Typography sx={styles.sectionTitle}>Contact</Typography>
                     <hr style={styles.divider} />
-                    <Button variant="inline" sx={styles.sectionButton}>General Inquiries</Button>
+                    <RouterLink style={styles.sectionButton} to="/contact">General Inquiries</RouterLink>
                     <Button variant="inline" onClick={() => window.open('https://discord.gg/AhsnAsSUNK', '_blank', 'noopener,noreferrer')} sx={styles.sectionButton}>Join the Community</Button>
                 </Box>
             </Box>
