@@ -18,51 +18,6 @@ import AccommodationsImg from '../assets/Accommodations.webp';
 import OasisHomeImg from '../assets/OasisHome.webp';
 import DiscordIcon from '../assets/discord-icon.svg';
 
-const activities = [
-    {
-        id: 1,
-        title: 'Spa & Wellness',
-        description: 'Relax and rejuvenate at our hot springs resort',
-        link: '/wellness',
-        image: <img src={SpringsImg} alt={'Wellness'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
-    },
-    {
-        id: 2,
-        title: 'Dining',
-        description: 'Exquisite culinary experiences crafted by renowned chefs',
-        link: '/dining',
-        image: <img src={DiningImg} alt={'Dining'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
-    },
-    {
-        id: 3,
-        title: 'Nightlife',
-        description: 'Vibrant entertainment in our elegant lounges',
-        link: '/nightlife',
-        image: <img src={NightlifeImg} alt={'Nightlife'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
-    },
-    {
-        id: 4,
-        title: 'Events',
-        description: 'Host your special occasions in our stunning venues',
-        link: '/events',
-        image: <img src={EventsImg} alt={'Events'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
-    },
-    {
-        id: 5,
-        title: 'Recreation',
-        description: 'Enjoy waterfalls, beaches, and outdoor adventures',
-        link: '/recreation',
-        image: <img src={RecreationImg} alt={'Recreation'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
-    },
-    {
-        id: 6,
-        title: 'Accommodations',
-        description: 'Luxurious rooms with breathtaking views',
-        link: '/accommodations',
-        image: <img src={AccommodationsImg} alt={'Accommodations'} style={{width: '100%', height: '200px', objectFit: 'cover'}} />
-    },
-];
-
 const Styles = (theme) => {
     return {
         root: {
@@ -181,6 +136,11 @@ const Styles = (theme) => {
                 color: theme.colors.header,
                 textShadow: `0 0 1px ${theme.colors.primary}`,
             },
+        },
+        activityImage: {
+            width: '100%', 
+            height: '200px', 
+            objectFit: 'cover'
         }
     }
 };
@@ -225,15 +185,36 @@ function HomePage() {
                 </Typography>
                 <Container maxWidth="lg">
                     <Grid container spacing={3} style={{display: 'flex', justifyContent: 'center'}}>
-                    {
-                        activities.map((activity) => (
-                            <Grid item xs={12} sm={6} md={4} key={activity.id}>
-                                <ActivityCard title={activity.title} description={activity.description} link={activity.link}>
-                                    {activity.image}
-                                </ActivityCard>
-                            </Grid>
-                        ))
-                    }
+                        <Grid item xs={12} sm={6} md={4} key={1}>
+                            <ActivityCard title={'Spa & Wellness'} description={'Relax and rejuvenate at our hot springs resort'} link={'/wellness'}>
+                                <img src={SpringsImg} alt={'Wellness'} style={styles.activityImage} />
+                            </ActivityCard>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} key={2}>
+                            <ActivityCard title={'Dining'} description={'Exquisite culinary experiences crafted by renowned chefs'} link={'/dining'}>
+                                <img src={DiningImg} alt={'Dining'} style={styles.activityImage} />
+                            </ActivityCard>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} key={3}>
+                            <ActivityCard title={'Nightlife'} description={'Experience vibrant nightlife and entertainment'} link={'/nightlife'}>
+                                <img src={NightlifeImg} alt={'Nightlife'} style={styles.activityImage} />
+                            </ActivityCard>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} key={4}>
+                            <ActivityCard title={'Events'} description={'Host your special occasions in our stunning venues'} link={'/events'}>
+                                <img src={EventsImg} alt={'Events'} style={styles.activityImage} />
+                            </ActivityCard>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} key={5}>
+                            <ActivityCard title={'Recreation'} description={'Enjoy waterfalls, beaches, and outdoor adventures'} link={'/recreation'}>
+                                <img src={RecreationImg} alt={'Recreation'} style={styles.activityImage} />
+                            </ActivityCard>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4} key={6}>
+                            <ActivityCard title={'Accommodations'} description={'Luxurious rooms with breathtaking views'} link={'/accommodations'}>
+                                <img src={AccommodationsImg} alt={'Accommodations'} style={styles.activityImage} />
+                            </ActivityCard>
+                        </Grid>
                     </Grid>
                 </Container>
             </Box>
