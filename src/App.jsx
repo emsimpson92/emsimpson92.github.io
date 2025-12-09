@@ -22,7 +22,7 @@ function App() {
       <Header />
       <div style={{ backgroundColor: theme.colors.background, minHeight: '100vh' }}></div>
     </Fragment>
-    );
+  );
 
   return (
     <ThemeProvider>
